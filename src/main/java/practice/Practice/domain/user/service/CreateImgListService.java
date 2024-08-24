@@ -6,7 +6,7 @@ import practice.Practice.domain.user.service.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import practice.Practice.infra.service.S3Util;
+import practice.Practice.infra.s3.service.S3Util;
 
 import java.util.List;
 

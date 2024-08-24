@@ -1,4 +1,4 @@
-package practice.Practice.infra.config;
+package practice.Practice.infra.s3.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

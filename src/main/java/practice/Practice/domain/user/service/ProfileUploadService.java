@@ -2,7 +2,7 @@ package practice.Practice.domain.user.service;
 
 import practice.Practice.domain.user.domain.User;
 import practice.Practice.domain.user.service.facade.UserFacade;
-import practice.Practice.infra.service.S3Util;
+import practice.Practice.infra.s3.service.S3Util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

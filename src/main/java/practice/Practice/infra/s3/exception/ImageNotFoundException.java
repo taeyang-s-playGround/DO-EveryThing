@@ -1,4 +1,4 @@
-package practice.Practice.infra.exception;
+package practice.Practice.infra.s3.exception;
 
 
 import practice.Practice.global.error.exception.BusinessException;

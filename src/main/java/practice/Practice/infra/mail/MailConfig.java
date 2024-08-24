@@ -1,4 +1,4 @@
-package practice.Practice.global.config;
+package practice.Practice.infra.mail;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package practice.Practice.infra.service;
+package practice.Practice.infra.s3.service;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.AmazonS3;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import practice.Practice.infra.exception.ImageUploadFailedException;
-import practice.Practice.infra.exception.WrongImageException;
+import practice.Practice.infra.s3.exception.ImageUploadFailedException;
+import practice.Practice.infra.s3.exception.WrongImageException;
 
 import java.io.IOException;
 import java.io.InputStream;

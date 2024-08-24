@@ -1,4 +1,4 @@
-package practice.Practice.global.config;
+package practice.Practice.infra.swagger;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
