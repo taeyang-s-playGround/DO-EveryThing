@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     private final MyPageService userService;
@@ -30,7 +30,6 @@ public class UserController {
     public MyPageResponse myPage() {
         return userService.myPage();
     }
-
 
     @PostMapping("/email")
     public ResponseEntity<String> sendEmail(@RequestBody @Valid SendEmailRequest request) {
@@ -50,8 +49,8 @@ public class UserController {
 
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/imageList")
-    public void createSchool(@RequestPart(value = "imageList", required = false) List<MultipartFile> multipartFiles)
+    @PostMapping("/images")
+    public void createSchool(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles)
     {
         createImgListService.imgListUpload(multipartFiles);
     }
