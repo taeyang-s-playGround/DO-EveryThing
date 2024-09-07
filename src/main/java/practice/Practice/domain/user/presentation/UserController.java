@@ -47,7 +47,6 @@ public class UserController {
         profileUploadService.profileUpload(profileImage);
     }
 
-
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/images")
     public void createSchool(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles)
