@@ -18,4 +18,5 @@ public class MyPageService {
         User currentUser = userFacade.getCurrentUser();
         return new MyPageResponse(currentUser);
     }
+
 }

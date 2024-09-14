@@ -49,7 +49,7 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/images")
-    public void createSchool(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles)
+    public void imageUpload(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles)
     {
         createImgListService.imgListUpload(multipartFiles);
     }
