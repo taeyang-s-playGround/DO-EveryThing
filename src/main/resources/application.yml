@@ -41,7 +41,7 @@ mail:
   host: smtp.gmail.com
   port: 587
   username: ilyoil@dsm.hs.kr
-  password: 0211ilyoil-07
+  password: test
   properties:
     mail.smtp.auth: true
     mail.smtp.starttls.enable: true
