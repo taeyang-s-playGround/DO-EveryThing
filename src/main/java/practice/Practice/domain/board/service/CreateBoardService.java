@@ -18,6 +18,9 @@ public class CreateBoardService {
         boardRepository.save(Board.builder()
             .title(request.getTitle())
             .content(request.getContent())
+            .content2(request.getContent())
+            .content3(request.getContent())
+            .content4(request.getContent())
             .build());
     }
 }

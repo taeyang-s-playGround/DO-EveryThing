@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.w3c.dom.Text;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,8 +27,16 @@ public class Board {
     @Column(columnDefinition = "varchar(256)")
     private String title;
 
-    @Column(columnDefinition = "varchar(256)")
+    @Column(columnDefinition = "TEXT")
     private String content;
 
+    @Column(columnDefinition = "TEXT")
+    private String content2;
+
+    @Column(columnDefinition = "TEXT")
+    private String content3;
+
+    @Column(columnDefinition = "TEXT")
+    private String content4;
 
 }
