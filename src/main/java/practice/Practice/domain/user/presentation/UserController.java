@@ -1,6 +1,7 @@
 package practice.Practice.domain.user.presentation;
 
 import practice.Practice.domain.user.presentation.dto.request.SendEmailRequest;
+import practice.Practice.domain.user.presentation.dto.request.UpdateInfoRequest;
 import practice.Practice.domain.user.presentation.dto.response.MyPageResponse;
 import practice.Practice.domain.user.service.CreateImgListService;
 import practice.Practice.domain.user.service.EmailService;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import practice.Practice.domain.user.service.UpdateInfoService;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -25,6 +27,7 @@ public class UserController {
     private final EmailService sendEmailService;
     private final ProfileUploadService profileUploadService;
     private final CreateImgListService createImgListService;
+    private final UpdateInfoService updateInfoService;
 
     @GetMapping("/myPage")
     public MyPageResponse myPage() {
@@ -49,8 +52,13 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/images")
-    public void imageUpload(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles)
-    {
+    public void imageUpload(@RequestPart(value = "images", required = false) List<MultipartFile> multipartFiles) {
         createImgListService.imgListUpload(multipartFiles);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping
+    public void updateInfo(UpdateInfoRequest request) {
+        updateInfoService.execute(request);
     }
 }

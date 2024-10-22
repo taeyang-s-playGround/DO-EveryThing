@@ -41,4 +41,10 @@ public class User {
     public void imageListUpload(List<String> profileImageUrl) {
         this.imgList = profileImageUrl;
     }
+
+    public void updateInfo(String email, String username, String accountId) {
+        this.email = email;
+        this.username = username;
+        this.accountId = accountId;
+    }
 }
