@@ -11,7 +11,6 @@ import practice.Practice.global.security.jwt.JwtProperties;
 @EnableAsync
 @SpringBootApplication
 @ConfigurationPropertiesScan
-@EnableConfigurationProperties(JwtProperties.class)
 public class PracticeApplication {
 
 	public static void main(String[] args) {

@@ -5,7 +5,6 @@ import lombok.*;
 @Getter
 @Builder
 @AllArgsConstructor
-
 public class TokenResponse {
 
     private String accessToken;

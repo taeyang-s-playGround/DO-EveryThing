@@ -1,23 +1,34 @@
 package practice.Practice.global.security.jwt;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
+import org.springframework.stereotype.Component;
 
-import java.util.Base64;
-
-@AllArgsConstructor
 @Getter
-@ConstructorBinding
-@ConfigurationProperties(prefix = "auth.jwt")
+@Component
 public class JwtProperties {
+    public static final String header = "Authorization";
+    public static final String prefix = "Bearer";
+    public static final String secretKey = "dfhasjkdfhayffhdtyhdfkjfvfddkvnvssdvnknkknlnkdkmnlvknllnkknlvfdhydshghjkdfaskverafter";
+    public static final long accessExp = 10000L;
+    public static final long refreshExp = 604800;
 
-    private final String secretKey;
-    private final Long accessExp = 10000L;
-    private final Long refreshExp=604800L;//리프레쉬 토큰의 만료시간은 1주일
-    private final String header;
-    private final String prefix;
+    public String getHeader() {
+        return header;
+    }
 
+    public String getPrefix() {
+        return prefix;
+    }
 
+    public String getSecretKey() {
+        return secretKey;
+    }
+
+    public Long getAccessExp() {
+        return accessExp;
+    }
+
+    public Long getRefreshExp() {
+        return refreshExp;
+    }
 }

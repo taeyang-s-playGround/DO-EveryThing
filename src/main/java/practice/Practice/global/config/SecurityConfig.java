@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import practice.Practice.global.security.jwt.JwtReissueUtil;
 import practice.Practice.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,6 +21,7 @@ public class SecurityConfig {
 
     private final JwtTokenProvider jwtTokenProvider;
     private final ObjectMapper objectMapper;
+    private final JwtReissueUtil jwtReissueUtil;
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -47,7 +49,7 @@ public class SecurityConfig {
                 .anyRequest().permitAll()
 
                 .and()
-                .apply(new FilterConfig(jwtTokenProvider, objectMapper))
+                .apply(new FilterConfig(jwtTokenProvider, objectMapper, jwtReissueUtil))
                 .and()
                 .build();
                 //.addFilterBefore(new JwtTokenFilter(jwtTokenProvider),

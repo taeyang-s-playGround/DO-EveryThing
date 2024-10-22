@@ -18,10 +18,9 @@ public class UpdateInfoService {
     public void execute(UpdateInfoRequest request) {
         User user = userFacade.getCurrentUser();
 
-        System.out.println("fesdffdsfnkldddddddddddddddddddddddddddddddddgggggggg");
-        /*if (user.getId() == 1L) {
+        if (user.getId() == 1L) {
             throw UserNotFoundException.EXCEPTION;
-        }*/
+        }
 
         user.updateInfo(request.getEmail(), request.getUserName(), request.getAccountId());
     }

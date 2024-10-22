@@ -58,7 +58,7 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.OK)
     @PatchMapping
-    public void updateInfo(UpdateInfoRequest request) {
+    public void updateInfo(@RequestBody @Valid UpdateInfoRequest request) {
         updateInfoService.execute(request);
     }
 }

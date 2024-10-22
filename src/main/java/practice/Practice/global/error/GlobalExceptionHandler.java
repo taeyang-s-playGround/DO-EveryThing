@@ -35,16 +35,4 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(response, HttpStatus.valueOf(errorCode.getStatusCode()));
     }
-
-    //그 외 에러들
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleException(Exception e) {
-
-        ErrorCode errorCode = ErrorCode.INTERNAL_SERVER_ERROR;
-        ErrorResponse response = ErrorResponse.of(errorCode, e.getMessage());
-
-        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
 }

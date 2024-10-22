@@ -43,6 +43,7 @@ public class User {
     }
 
     public void updateInfo(String email, String username, String accountId) {
+
         this.email = email;
         this.username = username;
         this.accountId = accountId;
