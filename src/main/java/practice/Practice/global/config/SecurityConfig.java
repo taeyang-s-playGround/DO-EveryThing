@@ -2,8 +2,10 @@ package practice.Practice.global.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import practice.Practice.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 
 @RequiredArgsConstructor
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig {
 
     private final JwtTokenProvider jwtTokenProvider;
@@ -24,9 +27,9 @@ public class SecurityConfig {
     }
 
     @Bean
-    protected void configure(HttpSecurity http) throws Exception {
+    protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable()
+        return http.csrf().disable()
         .cors().and()
                 .exceptionHandling()
 
@@ -44,11 +47,11 @@ public class SecurityConfig {
                 .anyRequest().permitAll()
 
                 .and()
-            .apply(new FilterConfig(jwtTokenProvider, objectMapper));
+                .apply(new FilterConfig(jwtTokenProvider, objectMapper))
+                .and()
+                .build();
                 //.addFilterBefore(new JwtTokenFilter(jwtTokenProvider),
                 //        UsernamePasswordAuthenticationFilter.class);
-
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 }
 

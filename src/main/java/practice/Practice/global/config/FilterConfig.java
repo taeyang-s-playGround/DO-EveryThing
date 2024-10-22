@@ -20,9 +20,9 @@ public class FilterConfig extends SecurityConfigurerAdapter<DefaultSecurityFilte
     public void configure(HttpSecurity http) {
 
         JwtTokenFilter jwtTokenFilter = new JwtTokenFilter(jwtTokenProvider);
-
         GlobalExceptionFilter globalExceptionFilter = new GlobalExceptionFilter(objectMapper);
 
-        http.addFilterBefore(globalExceptionFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
+            .addFilterBefore(globalExceptionFilter, JwtTokenFilter.class);
     }
 }

@@ -23,7 +23,6 @@ public class GlobalExceptionFilter extends OncePerRequestFilter {
         HttpServletResponse response,
         FilterChain filterChain
     ) throws IOException {
-
         try {
             filterChain.doFilter(request,response);
         } catch (BusinessException e){
