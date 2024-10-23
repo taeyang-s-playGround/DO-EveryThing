@@ -16,7 +16,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column(unique = true)
     private String email;
@@ -43,7 +43,6 @@ public class User {
     }
 
     public void updateInfo(String email, String username, String accountId) {
-
         this.email = email;
         this.username = username;
         this.accountId = accountId;
